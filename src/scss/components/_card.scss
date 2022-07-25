@@ -1,0 +1,103 @@
+.card {
+    background: $color-white;
+    border-radius: .4rem;
+}
+.card-head {
+    padding: .6rem;
+    text-align: center;
+    font-size: 18px;
+    background: $color-blue;
+    color: $color-white;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.card-body {
+    padding: .4rem;
+}
+
+.card-db {
+    padding: .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+
+    & .card-db-number {
+        color: $color-black;
+        font-size: 24px;
+        margin: 0;
+    }
+
+    & .card-db-text {
+        font-size: 18px;
+        margin-top: .8rem;
+    }
+}
+
+.card-db-green {
+    color: $color-green;
+    border: 1px solid $color-green;
+    
+    &:hover {
+        transition: all .3s ease-in-out;
+        background: $color-green;
+       
+        & .card-db {
+            & .card-db-number, .card-db-text, .card-db-icon {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.card-db-purple {
+    color: $color-purple;
+    border: 1px solid $color-purple;
+    
+    &:hover {
+        transition: all .3s ease-in-out;
+        background: $color-purple;
+       
+        & .card-db {
+            & .card-db-number, .card-db-text, .card-db-icon{
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.card-db-blue {
+    color: $color-blue;
+    border: 1px solid $color-blue;
+    
+    &:hover {
+        transition: all .3s ease-in-out;
+        background: $color-blue;
+       
+        & .card-db {
+            & .card-db-number, .card-db-text, .card-db-icon{
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.card-db-yellow {
+    color: $color-yellow;
+    border: 1px solid $color-yellow;
+    
+    &:hover {
+        transition: all .3s ease-in-out;
+        background: $color-yellow;
+       
+        & .card-db {
+            & .card-db-number, .card-db-text, .card-db-icon{
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.card-box-shadow {
+    box-shadow: 0 0 15px 3px $color-gray-2;
+}

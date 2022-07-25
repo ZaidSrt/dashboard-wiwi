@@ -1,0 +1,19 @@
+@import 'utilities/variables';
+
+@import 'layout/body';
+@import 'layout/sidebar';
+@import 'layout/header';
+
+@import 'components/card';
+@import 'components/text';
+@import 'components/height';
+@import 'components/flex';
+@import 'components/event';
+@import 'components/icon';
+@import 'components/background';
+@import 'components/input';
+@import 'components/button';
+
+
+// Sidebar
+@import '~react-pro-sidebar/dist/scss/styles.scss';

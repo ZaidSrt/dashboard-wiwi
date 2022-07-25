@@ -1,0 +1,26 @@
+.btn-prymary  {
+    background: $color-white;
+    border: .1rem solid $color-cian;
+    border-radius: .2rem;
+    color: $color-cian;
+}
+
+.btn-icon {
+    & span {
+        margin-left: .4rem;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: .4rem;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-cian;
+        color: $color-white;
+        transition:all .3s ease-in-out;
+    }
+}
