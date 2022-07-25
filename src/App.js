@@ -286,7 +286,7 @@ function App() {
 
                   {/* CARDS */}
                   <Grid container spacing={4} paddingX={3} paddingY={2}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} md={3}>
                       <div className='card card-box-shadow card-db-green'>
                         <div className='card-body'>
                           <div className='card-db'>
@@ -301,7 +301,7 @@ function App() {
                         </div>
                       </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} md={3}>
                       <div className='card card-box-shadow card-db-purple'>
                         <div className='card-body'>
                           <div className='card-db'>
@@ -316,7 +316,7 @@ function App() {
                         </div>
                       </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} md={3}>
                       <div className='card card-box-shadow card-db-yellow'>
                         <div className='card-body'>
                           <div className='card-db'>
@@ -331,7 +331,7 @@ function App() {
                         </div>
                       </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} md={3}>
                       <div className='card card-box-shadow card-db-blue'>
                         <div className='card-body'>
                           <div className='card-db'>
@@ -350,7 +350,7 @@ function App() {
 
                   {/* Graficas */}
                   <Grid container spacing={4} paddingX={3}>
-                    <Grid item xs={8}>
+                    <Grid item xs={12} md={8}>
                       <div className='card card-box-shadow'>
                         <div className='card-head'>
                           <span>Concentrado de visitas</span>
@@ -361,7 +361,7 @@ function App() {
                         <div className='card-footer'></div>
                       </div>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} md={4}>
                       <div className='card card-box-shadow'>
                         <div className='card-head'>
                           <span>Concentrado de visitas</span>
