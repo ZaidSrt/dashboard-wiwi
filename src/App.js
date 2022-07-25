@@ -31,7 +31,7 @@ import { useTheme } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
 // Api
-import { getViewsByDay, getViews } from './api/ViewApi';
+import { getViewsByDay, getViews, getViewsByGrafica } from './api/ViewApi';
 
 function App() {
 
@@ -43,6 +43,7 @@ function App() {
 
   const [views, setViews] = useState(0);
   const [viewsTable, setViewsTable] = useState([]);
+  const [viewsGrafica, setViewsGrafica] = useState([]);
 
   // Peticiones
   useEffect(() => {
@@ -53,7 +54,10 @@ function App() {
 
     getViews().then(response => {
       setViewsTable(response.data)
-      console.log(response);
+    }).catch(err => console.log(err));
+
+    getViewsByGrafica().then(response => {
+      setViewsGrafica(response.data)
     }).catch(err => console.log(err));
     
   }, [])
@@ -147,15 +151,22 @@ function App() {
     responsive: true,
   };
 
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  
+  const ApiLabel = [];
+  const ApiData = [];
+
+  viewsGrafica.forEach(view => {
+    ApiLabel.push(view.fecha);
+    ApiData.push(view.resultados);
+  });
+
+  const labels = ApiLabel;
   const dataArea = {
     labels,
     datasets: [
       {
         fill: true,
         label: 'Visitas por día',
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: ApiData,
         borderColor: 'rgb(3, 169, 244)',
         backgroundColor: 'rgba(3, 169, 244, .5)',
       },
@@ -170,26 +181,24 @@ function App() {
   );
   
   const dataDoughnut = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ApiLabel,
     datasets: [
       {
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: ApiData,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
+          'rgba(153, 102, 255, 0.2)'
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
+          'rgba(153, 102, 255, 1)'
         ],
         borderWidth: 1,
       },
@@ -197,43 +206,6 @@ function App() {
   };
 
   // Tabla
-  const rows = [
-    {
-      id: 61519951,
-      mac: '30-4B-07-FA-55-38',
-      nodo: '00-0C-43-26-82-A6',
-      disparo: 'plaza210-2_video.php',
-      fecha: '2021-12-30 23:00:00'
-    },
-    {
-      id: 61519951,
-      mac: '30-4B-07-FA-55-38',
-      nodo: '00-0C-43-26-82-A6',
-      disparo: 'plaza210-2_video.php',
-      fecha: '2021-12-30 23:00:00'
-    },
-    {
-      id: 61519951,
-      mac: '30-4B-07-FA-55-38',
-      nodo: '00-0C-43-26-82-A6',
-      disparo: 'plaza210-2_video.php',
-      fecha: '2021-12-30 23:00:00'
-    },
-    {
-      id: 61519951,
-      mac: '30-4B-07-FA-55-38',
-      nodo: '00-0C-43-26-82-A6',
-      disparo: 'plaza210-2_video.php',
-      fecha: '2021-12-30 23:00:00'
-    },
-    {
-      id: 61519951,
-      mac: '30-4B-07-FA-55-38',
-      nodo: '00-0C-43-26-82-A6',
-      disparo: 'plaza210-2_video.php',
-      fecha: '2021-12-30 23:00:00'
-    },
-  ];
 
   return (
     <div>

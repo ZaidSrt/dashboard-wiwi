@@ -23,3 +23,13 @@ export function getViewsByDay() {
     });
 
 }
+
+export function getViewsByGrafica() {
+
+    return axios.get(`${URL_BASE}api/get-view-grafica`).then(response => {
+        return response;
+    }).catch(err => {
+        return err;
+    });
+
+}
